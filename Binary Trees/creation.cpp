@@ -14,12 +14,6 @@ public:
     }
 };
 
-/*
-              1
-        3           5
-     7    11    17    null
-*/
-
 node* buildTree(node* root) {
 
     cout<<"enter the data: "<<endl;
