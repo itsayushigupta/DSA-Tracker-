@@ -29,13 +29,8 @@ node* buildTree(node* root) {
     root->right=buildTree(root->right);
 }
 
-/*
-a tree is height balanced if difference between heights
-of left and right subtrees is not more than one for all
-nodes of a tree
-*/
-
-// absolute(height(left)-height(right))) <= 1
+//a tree is height balanced if difference between heights of left and right subtrees is not more than one for all nodes of a tree
+//absolute(height(left)-height(right))) <= 1
 
 //APPROACH-1
 //time complexity=O(n^2)
@@ -73,9 +68,7 @@ bool isBalanced(node* root) {
 
 //APPROACH-2
 //time complexity=O(n)
-//pair stores true/false and height
-//first block stores if balanced or not
-//second block stores the height
+//pair stores true/false and height, first block stores if balanced or not and second block stores the height
 
 pair<bool, int> balancedFast(node* root) {
     //base case
