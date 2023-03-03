@@ -15,12 +15,6 @@ public:
     }
 };
 
-/*
-              1                  ----level 0
-        3           5            ----level 1
-     7    11    17    null       ----level 2
-*/
-
 node* buildTree(node* root) {
 
     cout<<"enter the data: "<<endl;
@@ -42,12 +36,12 @@ node* buildTree(node* root) {
 void inorderTraversal(node* root, int &cnt) {
     //base case
     if(root==NULL) return;
+    
+    //in order traversal ---> left node right
 
-    //recursive
-    //left node right
-
+    //recursive call
     inorderTraversal(root->left, cnt);
-    //leaf node condition
+    //leaf node condition ---> do not have child nodes 
     if(root->left==NULL && root->right==NULL) {
         cnt++;
     }
@@ -57,8 +51,7 @@ void inorderTraversal(node* root, int &cnt) {
 
 int NumberOfLeafNodes(node* root) {
     int cnt=0;
-    //doing by in order traversal
-    //calling in order function
+    //doing by in order traversal and calling in order traversal function
     inorderTraversal(root, cnt);
     return cnt;
 }
@@ -67,6 +60,5 @@ int NumberOfLeafNodes(node* root) {
 int main() {
     node* root=NULL;
     root=buildTree(root);
-    // 1 3 7 -1 -1 11 -1 -1 5 17 -1 -1 -1
     cout<<"number of leaf nodes: "<<NumberOfLeafNodes(root);
 }
